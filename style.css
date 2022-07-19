@@ -46,7 +46,7 @@ button {
 	left: 0;
 	z-index: 99;
 }
-
+* {user-select:none;}
 @font-face {
   font-family: 'DSEG14';
   src:  url('DSEG14Classic-BoldItalic.woff2') format('woff2'),

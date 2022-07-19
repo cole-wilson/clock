@@ -37,6 +37,15 @@ label {
 	font-size: 3em;
 	text-shadow: 0 0 10px rgb(var(--color));
 }
+button {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
 
 @font-face {
   font-family: 'DSEG14';

@@ -53,6 +53,17 @@ function update() {
 	m.innerText = (equation(minute)).padStart(5, "!");
 }
 window.onload = () => {
+	document.querySelector("button").onclick = function() {
+		this.remove();
+		let elem = document.querySelector("body");
+		if (elem.requestFullscreen) {
+	    elem.requestFullscreen();
+		} else if (elem.webkitRequestFullscreen) { /* Safari */
+			elem.webkitRequestFullscreen();
+		} else if (elem.msRequestFullscreen) { /* IE11 */
+			elem.msRequestFullscreen();
+		}
+	}
 	h = document.getElementById("hours");
 	m = document.getElementById("minutes");
 	setInterval(update, 800);

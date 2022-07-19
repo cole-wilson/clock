@@ -1,0 +1,45 @@
+:root {--color: 255, 0, 0;}
+label::before {content: "~~~";}
+span::before {content: "~~~~~";}
+
+body {
+  height: 100%;
+  width: 100%;
+	margin: 0;
+	font-family: 'DSEG14', monospace;
+	background: black;
+	padding-top: 15vh;
+	text-align: center;
+	color: rgb(var(--color));
+}
+span {
+	text-shadow: 0 0 10px rgb(var(--color));
+	z-index: 2;
+	font-size: 30vh;
+	line-height: 35vh;
+	position: relative;
+}
+span::before, label::before {
+	text-shadow: none;
+	z-index: 1;
+	color: rgba(var(--color), 0.1);
+	position: absolute;
+}
+span::after {
+	content: attr(title);
+	font-size: 3rem;
+	position: absolute;
+	right: -3em;
+}
+label {
+	display: inline-block;
+	transform: translateY(-25vh);
+	font-size: 3em;
+	text-shadow: 0 0 10px rgb(var(--color));
+}
+
+@font-face {
+  font-family: 'DSEG14';
+  src:  url('DSEG14Classic-BoldItalic.woff2') format('woff2'),
+        url('DSEG14Classic-BoldItalic.woff') format('woff');
+}

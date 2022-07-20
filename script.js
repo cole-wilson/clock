@@ -7,7 +7,7 @@ var colors = [
 	"255, 255, 0",
 	"0, 255, 255",
 	"255, 0, 255"
-], colorindex = localStorage.getItem("color")||0;
+], colorindex = localStorage.getItem("color")-1||0;
 
 function getfactors(n) {
 	if (n == 0) return [0];

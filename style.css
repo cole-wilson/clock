@@ -22,7 +22,7 @@ span {
 span::before, label::before {
 	text-shadow: none;
 	z-index: 1;
-	color: rgba(var(--color), 0.3);
+	color: rgba(var(--color), 0.15);
 	position: absolute;
 }
 span::after {

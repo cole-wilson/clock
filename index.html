@@ -7,10 +7,34 @@
 		<link href="style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<button>fullscreen</button>
-		<span id="hours">~~~~~</span><label>hrs</label>
-		<br>
-		<span id="minutes">~~~~~</span><label>min</label>
+		<center>
+		<div id="welcome">
+			<span id="closewelcome">&times;</span>
+			<h1>Equation Clock</h1>
+			<i>
+				a simple clock website designed to teach math facts<br>
+				click on the numbers to change their color
+			</i>
+			<br><br>
+			<fieldset><legend>Customize Equations</legend>
+				<label><input class="setting" name="addition" type="checkbox">Addition</label>
+				<label><input class="setting" name="subtraction" type="checkbox">Subtraction</label>
+				<label><input class="setting" name="multiplication" type="checkbox">Multiplication</label>
+				<label><input class="setting" name="custom" type="checkbox">Bring Your Own</label>
+				<br>
+				<textarea class="setting" name="equations" placeholder="Type some custom equations in this box. For example:&#10;&#10;3 = 9/3&#10;&#10;The equation must be less than 6 characters long."></textarea>
+			</fieldset>
+			<br>
+			<i>made by <a href="//cole.ws">cole wilson</a><br>if you like my work, you could:</i>
+			<br>
+			<a href="//buymeacoffee.com/colewilson" target="_blank" class="coffee">☕ Buy Me A Coffee</a>
+		</div>
+		</center>
+		<div id="clock">
+			<span id="hours">~~~~~</span><label id="hourslabel">hrs</label>
+			<br>
+			<span id="minutes">~~~~~</span><label id="minuteslabel">min</label>
+		</div>
 		<script src="script.js"></script>
 	</body>
 </html>

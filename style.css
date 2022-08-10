@@ -1,52 +1,99 @@
-:root {--color: 255, 0, 0;}
-label::before {content: "~~~";}
-span::before {content: "~~~~~";}
+:root {--hourcolor: 255, 0, 0;--mincolor: 255, 0, 0;--bgcolor: 0, 0, 0}
+#clock label::before {content: "~~~";}
+#clock span::before {content: "~~~~~";}
 
 body {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 	margin: 0;
-	font-family: 'DSEG14', monospace;
+	/* background-color: rgb(var(--bgcolor)); */
 	background: black;
+	font-family: monospace;
 	padding-top: 15vh;
 	text-align: center;
-	color: rgb(var(--color));
 }
-span {
-	text-shadow: 0 0 10px rgb(var(--color));
+#clock {font-family: 'DSEG14', monospace;user-select: none;}
+#minutes, #hours {
 	z-index: 2;
-	font-size: 30vh;
-	line-height: 35vh;
+	font-size: 30vmin;
+	line-height: 35vmin;
 	position: relative;
 }
-span::before, label::before {
+#minutes {text-shadow: 0 0 10px rgb(var(--mincolor));color: rgb(var(--mincolor))}
+#hours {text-shadow: 0 0 10px rgb(var(--hourcolor));color: rgb(var(--hourcolor))}
+
+
+#clock *::before {
 	text-shadow: none;
 	z-index: 1;
-	color: rgba(var(--color), 0.1);
 	position: absolute;
 }
-span::after {
+#minutes::before, #minuteslabel::before {color: rgba(var(--mincolor), 0.1);}
+#hours::before, #hourslabel::before {color: rgba(var(--hourcolor), 0.1);}
+
+#clock span::after {
 	content: attr(title);
 	font-size: 3rem;
 	position: absolute;
 	right: -3em;
 }
-label {
+#clock label {
 	display: inline-block;
 	transform: translateY(-25vh);
 	font-size: 3em;
-	text-shadow: 0 0 10px rgb(var(--color));
 }
-button {
+#minuteslabel {	text-shadow: 0 0 10px rgb(var(--mincolor));color: rgb(var(--mincolor))}
+#hourslabel {	text-shadow: 0 0 10px rgb(var(--hourcolor));color: rgb(var(--hourcolor))}
+
+#welcome {
+	color: black;
+	border: 2px double black;
+	font-family: monospace;
+	background: white;
 	position: fixed;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	z-index: 99;
+	top: 20vh;
+	/* width: 80vw; */
+	transform: translateX(-50%);
+	display: inline-block;
+	/* height: 80vh; */
+	overflow-y: auto;
+	z-index: 999999999999999;
+	padding: 10px;
+	box-sizing: border-box;
 }
-* {user-select:none;}
+legend {
+	text-align: left;
+}
+textarea {
+	resize: none;
+	width: 100%;
+	height: 100px;
+}
+#closewelcome {
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	color: red;
+	font-size: 1.2em;
+}
+.coffee {
+	border: 1px solid #44f;
+	margin-top: 5px;
+	padding: 5px;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: color 0.3s, background 0.3s;
+}
+
+a {color:inherit;}
+
+.coffee:hover {
+	background: #44f;
+	color: white;
+}
+
 @font-face {
   font-family: 'DSEG14';
   src:  url('DSEG14Classic-BoldItalic.woff2') format('woff2'),
